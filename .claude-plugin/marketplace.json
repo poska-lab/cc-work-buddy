@@ -1,0 +1,14 @@
+{
+  "name": "poska-lab",
+  "description": "Unofficial Claude Code mods by poska",
+  "owner": {
+    "name": "poska"
+  },
+  "plugins": [
+    {
+      "name": "work-buddy",
+      "source": "./",
+      "description": "入力欄の上に Claude くんと「今何をしているか」を表示する（非公式）"
+    }
+  ]
+}
