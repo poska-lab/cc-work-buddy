@@ -1,10 +1,10 @@
 # work-buddy
 
-Claude Code の入力欄の上に、Claude くん（Claude Code の起動画面のキャラ）と「今何をしているか」を表示する mod（function hooks plugin）です。絵と文字を同じ 3 行に収め、上に 1 行あけます。
+Claude Code の入力欄の上に、Clawd（Claude Code のマスコット。起動画面のキャラ）と「今何をしているか」を表示する mod（function hooks plugin）です。絵と文字を同じ 3 行に収め、上に 1 行あけます。
 
-> **非公式の mod です。** Anthropic とは関係がなく、Anthropic が作ったり認めたりしたものではありません。Claude、Claude Code、起動画面のキャラクターは Anthropic のものです。
+> **非公式の mod です。** Anthropic とは関係がなく、Anthropic が作ったり認めたりしたものではありません。Claude、Claude Code、Clawd（起動画面のキャラクター）は Anthropic のものです。
 >
-> An unofficial, fan-made mod for Claude Code: a little Claude above your prompt that shows what it is doing right now. Not affiliated with or endorsed by Anthropic.
+> An unofficial, fan-made mod for Claude Code: Clawd, the Claude Code mascot, sits above your prompt and shows what Claude is doing right now. Not affiliated with or endorsed by Anthropic.
 
 ```
   ▄▄▄▄▄▄   !!!  「?」「!」の動きを確認している
@@ -44,9 +44,9 @@ Claude Code の入力欄の上に、Claude くん（Claude Code の起動画面�
 - メインの loop だけを対象にし、サブエージェント内のイベントは表示しません。
 - 3 行目は作業状態から作った定型文です。1・2 行目は Haiku が、依頼・Claude の書いた文・作業と結果からまとめたもので、モデルの内部推論ではありません。
 
-## Claude くんの動き
+## Clawd の動き
 
-- Claude くんは、起動画面のブロック文字（` ▐▛███▜▌` / `▝▜█████▛▘` / `  ▘▘ ▝▝`）を1文字2×2画素として読み直した 18×5 画素の絵です。もとと同じく2×2画素を四分割ブロック文字1文字で描くので、大きさはもとと同じ横 9 文字・3 行です。1文字に塗れるのは2色までなので、虹色は文字ごとに1色にし、涙は目と別の文字に置きます。体はテーマの claude 色 `#D77757`、目は `#1F1F1F` です。
+- Clawd は、起動画面のブロック文字（` ▐▛███▜▌` / `▝▜█████▛▘` / `  ▘▘ ▝▝`）を1文字2×2画素として読み直した 18×5 画素の絵です。もとと同じく2×2画素を四分割ブロック文字1文字で描くので、大きさはもとと同じ横 9 文字・3 行です。1文字に塗れるのは2色までなので、虹色は文字ごとに1色にし、涙は目と別の文字に置きます。体はテーマの claude 色 `#D77757`、目は `#1F1F1F` です。
 - 作業中の状態（thinking から delegating まで）は、状態ごとのテンポで 4 コマをくり返します。実行中や書き換え中は 0.2 秒ごとに速く、考え中や読んでいるときは 0.5〜0.6 秒ごとにゆっくり動きます（目線・腕・跳ねる・左右の揺れ）。
 - 頭の横の記号も動きます（考え中は `?` → `??` → `???`、実行中は `!` → `!!` → `!!!`、ウェブは `~` → `~~~`）。同じ作業が続くとき（Read が続くなど）は、動きを頭に戻さずそのまま続けます。
 - 作業中は体が虹色に光り、色が流れます。流れ方（横・縦・全体いっせい・斜め）、始まりの色、回る向きは、状態が切り替わるたびに変わります。
@@ -67,7 +67,7 @@ Claude Code の入力欄の上に、Claude くん（Claude Code の起動画面�
 - 表示を止めるときは、Plugins で `work-buddy` を無効にします。
 - 帯（`AbovePrompt`）を描くのは terminal と desktop だけです。
 
-一言のテンプレートと集計は [`hooks/mood.ts`](hooks/mood.ts)、Claude くんの絵・動き・色は [`hooks/clawd.ts`](hooks/clawd.ts)、絵を動かす `Client` は [`hooks/buddy.tsx`](hooks/buddy.tsx)、イベントの処理と帯の描画は [`hooks/register.tsx`](hooks/register.tsx) にあります。
+一言のテンプレートと集計は [`hooks/mood.ts`](hooks/mood.ts)、Clawd の絵・動き・色は [`hooks/clawd.ts`](hooks/clawd.ts)、絵を動かす `Client` は [`hooks/buddy.tsx`](hooks/buddy.tsx)、イベントの処理と帯の描画は [`hooks/register.tsx`](hooks/register.tsx) にあります。
 
 ## 設定とプライバシー
 

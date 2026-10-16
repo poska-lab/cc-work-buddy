@@ -66,7 +66,7 @@ test('every frame keeps the shape: same rows, one width, no collapsible spaces',
       for (const line of drawn) widths.add(line.length)
     }
   }
-  // もとの Claude くんと同じ横 9 文字の体に、揺れの1文字と記号の4文字を足した幅（横に伸びていない）。
+  // もとの Clawd と同じ横 9 文字の体に、揺れの1文字と記号の4文字を足した幅（横に伸びていない）。
   expect([...widths]).toEqual([14])
 })
 

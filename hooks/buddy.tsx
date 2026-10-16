@@ -48,7 +48,7 @@ const LIT_MS = 2000
 const isLit = (clock: Clock) => clock.progress !== '' && clock.t - clock.progressAt < LIT_MS
 
 /**
- * Claude くんと、いま何をしているかの3行を、描画側の時計で描く。コマが変わったとき（虹色の間は色を進めるたび、
+ * Clawd と、いま何をしているかの3行を、描画側の時計で描く。コマが変わったとき（虹色の間は色を進めるたび、
  * 考え中は秒が変わるたび）だけ描き直し、プラグインとは往復しない。
  */
 const Buddy: ClientModule<Props, Clock> = (props, surface) => {

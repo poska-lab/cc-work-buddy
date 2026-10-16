@@ -1,6 +1,6 @@
 import type { MoodKind } from '../types'
 
-// Claude くん（Claude Code の起動画面のキャラ）。もとのブロック文字
+// Clawd（Claude Code のマスコット。起動画面のキャラ）。もとのブロック文字
 //    ▐▛███▜▌ / ▝▜█████▛▘ /   ▘▘ ▝▝
 // を1文字2×2画素として読み直した 18×5 画素の絵。もとと同じく、2×2画素を四分割ブロック1文字で描く（横 9 文字）。
 // B 体  . 透明。目・口・腕・脚は別に重ねる。目と口は頭と胴の内側だけに置き、輪郭を切らない。
@@ -9,7 +9,7 @@ const BODY = ['...BBBBBBBBBBBB...', '...BBBBBBBBBBBB...', '...BBBBBBBBBBBB...', 
 type Ink = 'body' | 'eye' | 'tear'
 type Px = readonly [x: number, y: number, ink: Ink]
 
-/** Claude くんの色（Claude Code のテーマの claude 色）と、目・涙の色。 */
+/** Clawd の色（Claude Code のテーマの claude 色）と、目・涙の色。 */
 const INKS: Record<Ink, string> = {
   body: '#D77757',
   eye: '#1F1F1F',
